@@ -1,0 +1,164 @@
+<!-- Pantalla de "Login" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- link´s a fuentes de Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        :root {
+            /* variables de color */
+            --white: #FFFFFF;
+            --black: #000000;
+            --very-light-pink: #C7C7C7;
+            --text-input-field: #F7F7F7;
+            --hospital-green: #ACD9B2;
+            /* a continuación, variables para tamaños de texto */
+            --sm: 14px;
+            --md: 16px;
+            --lg: 18px
+        }
+        body {
+            margin: 0;
+            font-family: 'Quicksand', sans-serif;
+        }
+        .login {
+            /* este es el gran conteneder de todo y por tanto aquí 
+            se definen propiedades q afectan todo el contenido */
+            width: 100%;
+            height: 100vh;
+            /* vh (view height): equivale a X/100 de la altura del ventana. 
+            En este caso, y combinado con la propiedad "center" q ofrece grid,
+            lo q hace es centrarlo de manera vertical*/
+            display: grid;
+            place-items: center;
+        }
+        .form-container {
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            /* aparecen 3 argumentos, pues en el diseño identifico "3" grandes filas
+            "auto" hace q tome un tamaño por defecto; "1fr" es una fracción */
+            width: 300px;
+            /* de esta manera garantizo q en pantallas pequeñas se vea bien
+            y q en otras muy grandes no se vea exagerada/ ancho */
+        }
+        .logo {
+            width: 150px;
+            /* controla tamaño del logo */
+            margin-bottom: 48px;
+            justify-self: center;
+            display: none;
+            /* el anterior es para q no aparezca en versión "Desktop" */
+        }
+        .form {
+            display: flex;
+            flex-direction: column;
+        }
+        .form a {
+            color: var(--hospital-green);
+            text-decoration: none;
+            text-align: center;
+            font-size: var(--sm);
+            margin-bottom: 52px;
+        }
+        .label {
+            font-size: var(--sm);
+            font-weight: bold;
+            margin-bottom: 4px;
+        }
+        .input {
+            /* este es el campo donde usuario introduce datos */
+            background-color: var(--text-input-field);
+            border: none;
+            border-radius: 8px;
+            height: 32px;
+            font-size: var(--md);
+            padding: 6px;
+            /* padding: margen interna del elemento */
+            margin-bottom: 12px;
+        }
+        .input-email {
+            margin-bottom: 22px;
+        }
+        .primary-button {
+            background-color: var(--hospital-green);
+            border-radius: 8px;
+            border: none;
+            color: var(--white);
+            width: 100%;
+            cursor: pointer;
+            /* "pointer" cambia cursor por mano en vez de flecha */
+            font-size: var(--md);
+            font-weight: bold;
+            height: 50px;
+        }
+        .secondary-button {
+            background-color: var(--white);
+            border-radius: 8px;
+            border: 1px solid var(--hospital-green);
+            color: var(--hospital-green);
+            width: 100%;
+            cursor: pointer;
+            /* "pointer" cambia cursor por mano en vez de flecha */
+            font-size: var(--md);
+            font-weight: bold;
+            height: 50px;
+        }
+        .login-button {
+            margin-top: 14px;
+            margin-bottom: 30px;
+        }
+        @media (max-width: 640px){
+            .logo {
+                display: block;
+            }
+            .secondary-button {
+                position: absolute;
+                width: 300px;
+                bottom: 0;
+                margin-bottom: 24px;
+                /* con esto hago q el botón siempre se vaya para abajo en un celular */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- genero estructura de etiquetas en fxn del diseño previo 
+        de wireframes definido propuesto por Platzi -->
+    <div class="login">
+        <div class="form-container">
+            <img src="./logos/logo_yard_sale.svg" alt="logo" class="logo">
+            <!-- este es el primer elemento q aparece en la ventana
+                y así sucesiva/ hacia abajo -->
+
+            <form action="/" class="form">
+                <label for="email" 
+                class="label">Email address</label>
+                <input type="text" 
+                id="email"
+                placeholder="alejonaranjo83@gmail.com" 
+                class="input input-email">
+
+                <label for="password" 
+                class="label">Password</label>
+                <input type="password" 
+                id="new-password"
+                placeholder="*********" 
+                class="input input-password">
+
+                <input type="submit" 
+                value="Log in" class="primary-button login-button">
+                <a href="/">Forgot my password</a>
+                </p>
+            </form>
+
+            <button class="secondary-button signup-button">Sign up</button>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!-- Iniciamos el módulo de "autenticación"
+    Pantalla de "password". Previamente creé 
+    en el archivo "index" varias cosas q iba a usar 
+    en todo el diseño -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- link´s a fuentes de Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        :root {
+            /* variables de color */
+            --white: #FFFFFF;
+            --black: #000000;
+            --very-light-pink: #C7C7C7;
+            --text-input-field: #F7F7F7;
+            --hospital-green: #ACD9B2;
+            /* a continuación, variables para tamaños de texto */
+            --sm: 14px;
+            --md: 16px;
+            --lg: 18px
+        }
+        body {
+            margin: 0;
+            font-family: 'Quicksand', sans-serif;
+        }
+        .login {
+            /* este es el gran conteneder de todo y por tanto aquí 
+            se definen propiedades q afectan todo el contenido */
+            width: 100%;
+            height: 100vh;
+            /* vh (view height): equivale a X/100 de la altura del ventana. 
+            En este caso, y combinado con la propiedad "place-items: center" q ofrece grid,
+            lo q hace es centrarlo de manera vertical*/
+            display: grid;
+            place-items: center;
+        }
+        .form-container {
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            /* grid-template-rows: 1fr 1fr 1fr; */
+            /* aparecen 3 argumentos, pues en el diseño identifico "3" grandes filas
+            "auto" hace q tome un tamaño por defecto; "1fr" es una fracción */
+            width: 300px;
+            /* de esta manera garantizo q en pantallas pequeñas se vea bien
+            y q en otras muy grandes no se vea exagerada/ ancho */
+        }
+        .logo {
+            width: 150px;
+            /* controla tamaño del logo */
+            margin-bottom: 48px;
+            justify-self: center;
+            display: none;
+            /* el anterior es para q no aparezca en versión "Desktop"
+            es decir, cuando se ve desde un computador */
+        }
+        .title {
+            font-size: var(--lg);
+            margin-bottom: 12px;
+            text-align: center;
+        }
+        .subtitle {
+            color: var(--very-light-pink);
+            font-size: var(--md);
+            font-weight: 300;
+            margin-top: 0;
+            margin-bottom: 32px;
+            text-align: center;
+        }
+        .form {
+            display: flex;
+            flex-direction: column;
+        }
+        .label {
+            font-size: var(--sm);
+            font-weight: bold;
+            margin-bottom: 4px;
+        }
+        .input {
+            /* este es el campo donde usuario introduce datos */
+            background-color: var(--text-input-field);
+            border: none;
+            border-radius: 8px;
+            height: 32px;
+            font-size: var(--md);
+            padding: 6px;
+            /* padding: margen interna del elemento */
+            margin-bottom: 12px;
+        }
+        .primary-button {
+            background-color: var(--hospital-green);
+            border-radius: 8px;
+            border: none;
+            color: var(--white);
+            width: 100%;
+            cursor: pointer;
+            /* "pointer" cambia cursor por mano en vez de flecha */
+            font-size: var(--md);
+            font-weight: bold;
+            height: 50px;
+        }
+        .login-button {
+            margin-top: 14px;
+            margin-bottom: 30px;
+        }
+        @media (max-width: 640px){
+            .logo {
+                display: block;
+            /* esto es para q cuando se vea desde un teléfono,
+            aparezca el logo... en versión Desktop el logo aparece 
+            en otra parte. Está cambiando orden 
+            dado previa/ al definir estilo del "logo"
+            (la parte "responsive") */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- genero estructura de etiquetas en fxn del diseño previo 
+        de wireframes definido propuesto por Platzi -->
+    <div class="login">
+        <div class="form-container">
+            <img src="./logos/logo_yard_sale.svg" alt="logo" class="logo">
+            <!-- este es el primer elemento q aparece en la ventana
+                y así sucesiva/ hacia abajo -->
+
+            <h1 class="title">Create a new password</h1>
+            <p class="subtitle">Enter a new password for your account</p>
+
+            <form action="/" class="form">
+                <label for="password" 
+                class="label">Password</label>
+                <input type="password" 
+                id="password"
+                placeholder="*********" 
+                class="input input-password">
+
+                <label for="new-password" 
+                class="label">Password</label>
+                <input type="password" 
+                id="new-password"
+                placeholder="*********" 
+                class="input input-password">
+
+                <input type="submit" 
+                value="Confirm" class="primary-button login-button">
+                <!-- una vez definidos los elementos del HTML
+                    subo a style, para estilizar conforme se definió
+                    en archivo aparte -->
+            </form>
+        </div>
+    </div>
+</body>
+</html>

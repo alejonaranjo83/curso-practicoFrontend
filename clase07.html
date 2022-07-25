@@ -1,0 +1,92 @@
+<!-- Se creará el "menú" para la versión Desktop -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- link´s a fuentes de Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        :root {
+            /* variables de color */
+            --white: #FFFFFF;
+            --black: #000000;
+            --very-light-pink: #C7C7C7;
+            --text-input-field: #F7F7F7;
+            --hospital-green: #ACD9B2;
+            /* a continuación, variables para tamaños de texto */
+            --sm: 14px;
+            --md: 16px;
+            --lg: 18px
+        }
+        body {
+            margin: 0;
+            font-family: 'Quicksand', sans-serif;
+        }
+        .desktop-menu {
+            width: 100px;
+            height: auto;
+            /* esto quiere decir q tome el mismo tamaño del contenido */
+            border: 1px solid var(--very-light-pink);
+            border-radius: 6px;
+            padding: 20px 20px 0 20px;
+        }
+        .desktop-menu ul {
+            list-style: none;
+            /* esto es para eliminar los ptos q se generan por defecto en una lista */
+            padding: 0;
+            margin: 0;
+            /* las 2 anteriores es para eliminar el padding y margin q trae por defecto un UL */
+        }
+        .desktop-menu ul li {
+            text-align: end;
+        }
+        .desktop-menu ul li:nth-child(1), 
+        .desktop-menu ul li:nth-child(2) {
+            font-weight: bold;
+        }
+        .desktop-menu ul li:last-child {
+            /* con esa pseudoclase voy al último item de la lista */
+            padding-top: 20px;
+            border-top: 1px solid var(--very-light-pink);
+        }
+        .desktop-menu ul li:last-child a {
+            color: var(--hospital-green);
+            font-size: var(--sm);
+        }
+        .desktop-menu ul li a {
+            /* lo anterior se lee como: todos los "a" q están en todos los "li"
+            q hacen parte de la "ul" de "desktop-menu" */
+            color: var(--black);
+            text-decoration: none;
+            margin-bottom: 20px;
+            display: inline-block;
+            /* el anterior es para q pueda tomar la propiedad margen deseada */
+        }
+    </style>
+</head>
+<body>
+    <div class="desktop-menu">
+        <ul>
+            <li>
+                <a href="/" class="title">My orders</a>
+                <!-- cada elemento tiene un ancor pq queremos 
+                    a nos lleve a otra parte -->
+            </li>
+
+            <li>
+                <a href="/">My account</a>
+            </li>
+
+            <li>
+                <a href="/">Sign out</a>
+            </li>
+        </ul>
+
+    </div>
+</body>
+</html>

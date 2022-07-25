@@ -1,0 +1,125 @@
+<!-- Creando "detalle del producto" -->
+<DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        :root {
+            /* variables de color */
+            --white: #FFFFFF;
+            --black: #000000;
+            --very-light-pink: #C7C7C7;
+            --text-input-field: #F7F7F7;
+            --hospital-green: #ACD9B2;
+            /* a continuación, variables para tamaños de texto */
+            --sm: 14px;
+            --md: 16px;
+            --lg: 18px
+        }
+        body {
+            margin: 0;
+            font-family: 'Quicksand', sans-serif;
+        }
+        .product-detail {
+            width: 360px;
+            padding-bottom: 24px;
+            position: absolute;
+            right: 0;
+        }
+        .product-detail-close {
+            background-color: var(--white);
+            width: 14px;
+            height: 14px;
+            position: absolute;
+            top: 24px;
+            left: 24px;
+            z-index: 2;
+            padding: 12px;
+            border-radius: 50%;
+        }
+        .product-detail-close:hover {
+            /* las indicaciones anteriores son para ubicar la flechita */
+            cursor: pointer;
+        }
+        .product-detail img:nth-child(2) {
+            /* estas indicaciones aplican para la imagen */
+            width: 100%;
+            height: 360px;
+            object-fit: cover;
+            border-radius: 0 0 20px 20px;
+            /* q los 2 vértices de arriba sean cuadrados y los de abajo redondos */
+        }
+        .product-info {
+            margin: 24px 24px 0px 24px;
+        }
+        .product-info p:nth-child(1) {
+            font-weight: bold;
+            font-size: var(--md);
+            margin-top: 0;
+            margin-bottom: 4px;
+        }
+        .product-info p:nth-child(2) {
+            color: var(--very-light-pink);
+            font-size: var(--md);
+            margin-top: 0;
+            margin-bottom: 36px;
+        }
+        .product-info p:nth-child(3) {
+            color: var(--very-light-pink);
+            font-size: var(--sm);
+            margin-top: 0;
+            margin-bottom: 36px;
+        }
+        .primary-button {
+            background-color: var(--hospital-green);
+            border-radius: 8px;
+            border: none;
+            color: var(--white);
+            width: 100%;
+            cursor: pointer;
+            /* "pointer" cambia cursor por mano en vez de flecha */
+            font-size: var(--md);
+            font-weight: bold;
+            height: 50px;
+        }
+        .add-to-cart-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        @media (max-width: 640px) {
+            .product-detail {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <aside class="product-detail">
+        <div class="product-detail-close">
+            <img src="./icons/icon_close.png" alt="close">
+        </div>
+
+        <img src="https://images.pexels.com/photos/3150928/pexels-photo-3150928.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="albaricoque">
+
+        <div class="product-info">
+            <p>$7,00</p>
+            <p>Albaricoque</p>
+            <p>El aceite de albaricoque se utiliza al igual que el aceite de almendras dulces 
+                como demulcente de la piel. En Indochina se usa como antiséptico en enfermedades respiratorias.
+                Las semillas se usan para tratar la tos y el estreñimiento en medicina china. Tiene vitamina A, 
+                potente antioxidante, mejora también las enfermedades de los ojos.</p>
+            <button class="primary-button add-to-cart-button">
+                <img src="./icons/bt_add_to_cart.svg" alt="add to cart">
+                Add to cart
+            </button>
+        </div>
+    </aside>
+</body>
+</html>
